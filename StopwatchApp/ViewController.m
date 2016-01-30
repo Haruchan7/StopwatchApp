@@ -31,7 +31,7 @@
     
     timelabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 300, 100)];
     timelabel.center = CGPointMake(160, 284);
-    timelabel.font = [UIFont fontWithName:@"Chalkboard Bold" size:30];
+    timelabel.font = [UIFont fontWithName:@"HiraKakuProN-W6" size:50];
     timelabel.text = @"00:00";
     timelabel.textAlignment = NSTextAlignmentCenter;
     timelabel.backgroundColor = [UIColor clearColor];
@@ -92,7 +92,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     sec = 0;
-    min = 99;
+    min = 0;
     condition = true;
     [self setupParts];
 }
