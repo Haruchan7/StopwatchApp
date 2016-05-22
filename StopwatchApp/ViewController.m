@@ -26,27 +26,30 @@
 
 -(void)setupParts{
     background = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 568)];
-    background.image = [UIImage imageNamed:@"image1.JPG"];
+    background.image = [UIImage imageNamed:@"img_1.JPG"];
     [self.view addSubview:background];
     
-    timelabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 300, 100)];
+    timelabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 280, 100)];
     timelabel.center = CGPointMake(160, 284);
-    timelabel.font = [UIFont fontWithName:@"HiraKakuProN-W6" size:50];
+    timelabel.font = [UIFont fontWithName:@"Optima-Regular" size:40];
     timelabel.text = @"00:00";
     timelabel.textAlignment = NSTextAlignmentCenter;
+    timelabel.textColor = [UIColor grayColor];
     timelabel.backgroundColor = [UIColor clearColor];
     [self.view addSubview:timelabel];
 
     startstop = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     startstop.frame = CGRectMake(0, 0, 100, 50);
-    startstop.center = CGPointMake(160, 400);
+    startstop.center = CGPointMake(100, 420);
+    startstop.titleLabel.font= [UIFont fontWithName:@"Optima-Regular" size:20];
     [startstop setTitle:@"START" forState:UIControlStateNormal];
     [startstop addTarget:self action:@selector(switchButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:startstop];
     
     UIButton *reset = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     reset.frame = CGRectMake(0, 0, 100, 50);
-    reset.center = CGPointMake(160, 450);
+    reset.center = CGPointMake(220, 420);
+    reset.titleLabel.font = [UIFont fontWithName:@"Optima-Regular" size:20];
     [reset setTitle:@"RESET" forState:UIControlStateNormal];
     [reset addTarget:self action:@selector(resetCount:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:reset];
@@ -87,7 +90,15 @@
     timelabel.text = [NSString stringWithFormat:@"%02d : %02d",min,sec];
     [self.view addSubview:timelabel];
 }
-
+/*
+-(void)initSlideshow{
+    //総画像ファイルを取得
+    imageNum = 3;
+ 
+    //
+    
+}
+*/
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -95,6 +106,7 @@
     min = 0;
     condition = true;
     [self setupParts];
+    
 }
 
 - (void)didReceiveMemoryWarning {
